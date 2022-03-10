@@ -241,6 +241,9 @@ img {
 #liked-post-header{
   display: none;
 }
+#reported-post-header{
+  display: none;
+}
 
 #liked{
   display: none;
