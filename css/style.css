@@ -238,6 +238,10 @@ img {
   color: gray;
 }
 
+#liked-post-header{
+  display: none;
+}
+
 #liked{
   display: none;
 }
