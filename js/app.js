@@ -32,12 +32,14 @@ const displayContent = (text) => {
 
 const switchTab = (id) => {
     if (id === "posts") {
+        document.getElementById("q-and-a").style.display = "block";
         document.getElementById( "reported-post-header" ).style.display = "none";
         document.getElementById( "liked-post-header" ).style.display = "none";
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
     } else if (id === "liked") {
+        document.getElementById("q-and-a").style.display = "none";
         document.getElementById( "reported-post-header" ).style.display = "none";
         document.getElementById( "liked-post-header" ).style.display = "block";
         document.getElementById( "liked" ).style.display = "block";
@@ -46,6 +48,7 @@ const switchTab = (id) => {
 
         displayLikedPosts();
     } else {
+        document.getElementById("q-and-a").style.display = "none";
         document.getElementById( "reported-post-header" ).style.display = "block";
         document.getElementById( "liked-post-header" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "block";
