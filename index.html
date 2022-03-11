@@ -80,20 +80,54 @@
                 <div id="reported">
                 </div>
             </div>
-            <section class="mt-5" id="q-and-a">
+            <section class="mt-5 p-5" id="q-and-a">
                 <div class="container px-4">
                     <div class="row gx-5">
                       <div class="col">
                        <div class="p-3 border bg-light"><h1>How javaScript Works?</h1>
                     <p>
-                        javaScript is a single threded interpreted programming language, that means the code doesn't compailed into machine code untill execution. There is a javaScript engine which executes the code. When the javascript file is loaded to the browser, the javascript  engine executes code line by line from top to bottom of the script. This javaScript engine parse the code line by line and convert it ito machine code and then execute the code. The javascript engine consist of two components: 1) Memory Heap: Here all the memory allocation operations happens, 2) Call Stack: Here all the function calling mechanisms happens. The call stack is where the code actually executed. The heap stores all the objects in our code.
+                        javaScript is a single threded interpreted programming language. There is a javaScript engine which executes the code. When browser gets a JS code, Javascript engine (V8 for Chrome) parse the code and makes a syntax tree. After making syntax tree, JS engine start the interpreter which is called interpreter ignition. Javascript engine also uses a Just in Time (JIT) compiler to compile the code in real time.
+                        <img src="images/v8.png" class="p-3" alt="">
+                        It also uses a optimizer to optimize the machine code code which is known as TurboFan. Then it converts the machine code into bytecode. The javascript engine consist of two components: 1) Memory Heap: Here all the memory allocation operations happens, 2) Call Stack: Here all the function calling mechanism happens. The call stack is where the code actually executed. The heap stores all the objects in our code.
                     </p></div>
                       </div>
                       <div class="col">
                         <div class="p-3 border bg-light"><h1>
                             What does JS event loop do?
-                        </h1></div>
+                        </h1>
+                    <p>
+                        Event loop in javaScript is a process that handles the communication between the Call Stack (synchronous events) and Callback Queue (asynchronous events). It constantly checks if the call stack is empty or not. If empty then new functions are added from the callback queue. The javascript engine (V8 for chrome) consist of two parts, Heap and Call Stack. 
+                        <img src="images/event-loop.png" class="p-3" alt=""> 
+                        Browsers assist the engine with Web API's and Callback Queue. When JS engine works with asynchronous code the web api handles the blocking and non blocking behaviour of javaScript code. The Callback Queue built with all the synchronous callback functions and they wait here mto go back to the call stack for execution.The callback Queue works using first in first out (FIFO) method.
+                    </p></div>
                       </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="text-center">
+                            <h1>Difference between Local Storage & Session Storage</h1>
+                        </div>
+                        <table class="table table-bordered text-center bg-light">
+                            <thead>
+                              <tr>
+                                <th scope="col">Local Storage</th>
+                                <th scope="col">Session Storage</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Data remains untill manually deleted</td>
+                                <td>Data remains untill the browser or tab is closed</td>    
+                              </tr>
+                              <tr>
+                                <td>The storage capacity of local storage is 5MB to 10MB</td>
+                                <td>The storage capacity of local storage is 5MB</td>    
+                              </tr>
+                              <tr>
+                                <td>Can be accessed using window.localStorage</td>
+                                <td>Can be accessed using window.sessionStorage</td>
+                              </tr>
+                            </tbody>
+                          </table>
                     </div>
                   </div>
             </section>
